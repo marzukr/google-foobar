@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+1.py	../1.py	1;"	kind:file	line:1
+answer	../1.py	/^def answer(s):$/;"	kind:function	line:1
+2_1.py	../2_1.py	1;"	kind:file	line:1
+answer	../2_1.py	/^def answer(xs):$/;"	kind:function	line:1
+stringMultiply	../2_1.py	/^def stringMultiply(xm):$/;"	kind:function	line:31
+stringAdd	../2_1.py	/^def stringAdd(xa):$/;"	kind:function	line:63
+2_2.py	../2_2.py	1;"	kind:file	line:1
+convToTuple	../2_2.py	/^def convToTuple(coord):$/;"	kind:function	line:1
+convToPos	../2_2.py	/^def convToPos(coord):$/;"	kind:function	line:4
+withinBounds	../2_2.py	/^def withinBounds(coord):$/;"	kind:function	line:7
+possibleMoves	../2_2.py	/^def possibleMoves(coord):$/;"	kind:function	line:10
+dijkstra	../2_2.py	/^def dijkstra(start, dest):$/;"	kind:function	line:19
+answer	../2_2.py	/^def answer(src, dest):$/;"	kind:function	line:48
+3_1.py	../3_1.py	1;"	kind:file	line:1
+answer	../3_1.py	/^def answer(n):$/;"	kind:function	line:1
+3_2.py	../3_2.py	1;"	kind:file	line:1
+answer	../3_2.py	/^def answer(start, length):$/;"	kind:function	line:4
+seqXOR	../3_2.py	/^def seqXOR(start, stop):$/;"	kind:function	line:17
+oneSeqXOR	../3_2.py	/^def oneSeqXOR(n):$/;"	kind:function	line:20
+3_3.py	../3_3.py	1;"	kind:file	line:1
+possibleOperations	../3_3.py	/^def possibleOperations(fuelAmount):$/;"	kind:function	line:1
+dijkstra	../3_3.py	/^def dijkstra(start, dest):$/;"	kind:function	line:7
+answer	../3_3.py	/^def answer(n):$/;"	kind:function	line:34
