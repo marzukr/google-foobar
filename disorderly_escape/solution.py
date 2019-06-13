@@ -1,5 +1,5 @@
-import numpy as np
-import itertools
+# import numpy as np
+# import itertools
 # from scipy.linalg import null_space
 
 # def is_equivalent(a, b):
@@ -20,45 +20,67 @@ import itertools
 #     b_list.sort()
 #     return a_list == b_list
 
-def is_equivalent(a,b):
-    a_row_id = []
-    b_row_id = []
-    for i in range(0, np.size(a, 0)):
-        a_row_id.append(np.bincount(a[i]).tolist())
-        b_row_id.append(np.bincount(b[i]).tolist())
-    a_row_id.sort()
-    b_row_id.sort()
-    if a_row_id != b_row_id: return False
+# def is_equivalent(a,b):
+#     a_row_id = []
+#     b_row_id = []
+#     for i in range(0, np.size(a, 0)):
+#         a_row_id.append(np.bincount(a[i]).tolist())
+#         b_row_id.append(np.bincount(b[i]).tolist())
+#     a_row_id.sort()
+#     b_row_id.sort()
+#     if a_row_id != b_row_id: return False
 
-    a_row_id = []
-    b_row_id = []
-    for i in range(0, np.size(a, 1)):
-        a_row_id.append(np.bincount(np.transpose(a)[i]).tolist())
-        b_row_id.append(np.bincount(np.transpose(b)[i]).tolist())
-    a_row_id.sort()
-    b_row_id.sort()
-    return a_row_id == b_row_id
+#     a_row_id = []
+#     b_row_id = []
+#     for i in range(0, np.size(a, 1)):
+#         a_row_id.append(np.bincount(np.transpose(a)[i]).tolist())
+#         b_row_id.append(np.bincount(np.transpose(b)[i]).tolist())
+#     a_row_id.sort()
+#     b_row_id.sort()
+#     return a_row_id == b_row_id
 
-a = np.array([[0,0],[1,1]])
-b = np.array([[0,1],[0,1]])
-# print(is_equivalent(a,b))
+# a = np.array([[0,0],[1,1]])
+# b = np.array([[0,1],[0,1]])
+# # print(is_equivalent(a,b))
 
-def solution(w, h, s):
-    unique = []
-    for i in itertools.product(range(0,s), repeat = w * h):
-        test = np.reshape(np.array(i), (w, h))
-        is_unique = True
-        for u in unique:
-            if is_equivalent(test, u):
-                is_unique = False
-                break
-        if is_unique:
-            unique.append(test)
-    return len(unique)
+# def solution(w, h, s):
+#     unique = []
+#     for i in itertools.product(range(0,s), repeat = w * h):
+#         test = np.reshape(np.array(i), (w, h))
+#         is_unique = True
+#         for u in unique:
+#             if is_equivalent(test, u):
+#                 is_unique = False
+#                 break
+#         if is_unique:
+#             unique.append(test)
+#     return len(unique)
 
 # for i in range(1,13):
 #     print(solution(1,i,3))
-print(solution(2,3,2))
+# print(solution(2,3,2))
+
+def partition(n):
+    return construct_j_vect(n, n-1)
+
+def construct_j_vect(n, leading_pos):
+    j_vect = [0 if i != (leading_pos) else 1 for i in range(0, n)]
+    return j_vect
+
+def j_vect_sum(j_vect):
+    total = 0
+    for i in range(0, len(j_vect)):
+        total += (i + 1) * j_vect[i]
+
+def partitionHelper(n, leading_pos, j_vect):
+    if j_vect[leading_pos] == 1:
+        new_vect = construct_j_vect(n, leading_pos - 1)
+        yield partitionHelper(n, leading_pos-1, new_vect)
+    total = j_vect_sum(j_vect)
+    # while total < n:
+
+
+print(partition(6))
 
 
     
