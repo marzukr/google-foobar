@@ -56,5 +56,9 @@ def solution(w, h, s):
             unique.append(test)
     return len(unique)
 
-for i in range(1,13):
-    print(solution(1,i,3))
+# for i in range(1,13):
+#     print(solution(1,i,3))
+print(solution(2,3,2))
+
+
+    
