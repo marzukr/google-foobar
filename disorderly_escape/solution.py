@@ -60,27 +60,13 @@
 #     print(solution(1,i,3))
 # print(solution(2,3,2))
 
-def partition(n):
-    return construct_j_vect(n, n-1)
+def partitions(n, I=1):
+    yield (n,)
+    for i in range(I, n//2 + 1):
+        for p in partitions(n-i, i):
+            yield (i,) + p
 
-def construct_j_vect(n, leading_pos):
-    j_vect = [0 if i != (leading_pos) else 1 for i in range(0, n)]
-    return j_vect
-
-def j_vect_sum(j_vect):
-    total = 0
-    for i in range(0, len(j_vect)):
-        total += (i + 1) * j_vect[i]
-
-def partitionHelper(n, leading_pos, j_vect):
-    if j_vect[leading_pos] == 1:
-        new_vect = construct_j_vect(n, leading_pos - 1)
-        yield partitionHelper(n, leading_pos-1, new_vect)
-    total = j_vect_sum(j_vect)
-    # while total < n:
-
-
-print(partition(6))
+print(list(partitions(6)))
 
 
     
